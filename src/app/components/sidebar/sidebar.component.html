@@ -1,0 +1,12 @@
+<div class="bg-dark border-right p-5 h-100 min-vh-100 vw-auto" id="sidebar">
+  <h3 class="text-light">NG-Gifs-App</h3>
+  <hr class="text-light">
+  <div class="list-group list-reset gap-1" *ngIf='list.length !== 0, else vacio'>
+    <a *ngFor="let item of list" href="#" class="list-group-item list-group-item-action text-center" (click)="useHistory(item)">{{item | titlecase}}</a>
+  </div>
+
+  <ng-template #vacio>
+    <p>No hay gifs <br> en el historial</p>
+  </ng-template>
+
+</div>

@@ -1,0 +1,17 @@
+<div class="row ">
+  <ng-container *ngIf="result.length === 0 ; else elseTemplate">
+    <p>No existen resultados</p>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <div *ngFor="let item of result" class="col-md-4 col-sm-6 animate__animated animate__backInDown ">
+      <div class="card p-2">
+        <img [src]="item.images.downsized_medium.url" [alt]="item.title" class="card-img-top">
+        <div class="card-body">
+          <p class="card-text">
+            {{item.title}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
